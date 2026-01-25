@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CISC 322/326 Gemini CLI</title>
+
+  <!-- Public fonts (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="topbar">
+    <div class="container topbar-inner">
+        <div class="brand">
+        <div class="brand-title">Group 13</div>
+        <div class="brand-subtitle">Gemini CLI Project</div>
+        </div>
+
+        <button class="hamburger" id="navToggle"
+        aria-label="Open navigation menu"
+        aria-controls="siteNav"
+        aria-expanded="false">
+        <span class="hamburger-bars" aria-hidden="true"></span>
+        </button>
+
+        <nav class="nav" id="siteNav">
+        <a href="#members">Members</a>
+        <a href="#resources">Resources</a>
+        <a href="#conceptual-architecture">Conceptual Architecture</a>
+        <a href="#concrete-architecture">Concrete Architecture</a>
+        <a href="#enhancements">Enhancements</a>
+        </nav>
+    </div>
+    </header>
+
+
+  <main class="container">
+    <section class="card hero">
+      <h1>Project Overview</h1>
+      <p>
+        This project focuses on Gemini CLI, an open-source command-line AI agent that integrates Google’s Gemini models directly into a developer’s local workflow.
+      </p>
+      <p>
+        As part of the course project, our group will analyze and recover the system’s architecture and propose a targeted architectural enhancement.
+      <div class="pill-row">
+        <span class="pill">CISC 322</span>
+        <span class="pill">Gemini CLI</span>
+      </div>
+    </section>
+
+    <section id="members" class="card">
+      <h2>Members</h2>
+      <ul class="list">
+        <li><strong>Iram Hasan (18ih2@queensu.ca)</strong> — Presenter</li>
+        <li><strong>Lena Sun (22bsn3@queensu.ca)</strong> — Presenter</li>
+        <li><strong>Maciek Bawol</strong> — Member</li>
+        <li><strong>Mack Rabeau (22nwd3@queensu.ca)</strong> — Team Lead</li>
+      </ul>
+    </section>
+
+    <section id="conceptual-architecture" class="card">
+      <h2>A1. Conceptual Architecture</h2>
+      <p>To be uploaded 17/02 - 24/02</p>
+    </section>
+
+    <section id="concrete-architecture" class="card">
+      <h2>A2. Concrete Architecture</h2>
+      <p>To be uploaded ...</p>
+    </section>
+
+    <section id="enhancements" class="card">
+      <h2>A3. Enhancements</h2>
+      <p>To be uploaded ...</p>
+    </section>
+
+
+    <section id="resources" class="card">
+      <h2>Resources</h2>
+        <ul class="list">
+            <li><a href="https://geminicli.com/docs/">Official Documentation</a></li>
+            <li><a href="https://github.com/google-gemini/gemini-cli">Gemini CLI Repository</a></li>
+            <li><a href="https://virtuslab.com/blog/ai/how-claude-code-works/">Claude - Competing Agent</a></li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+      <a class="backtotop" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to top</a>
+    </footer>
+  </main>
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const nav = document.getElementById('siteNav');
+
+        function closeNav() {
+            nav.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        toggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('nav-open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Close menu after clicking a link (nice UX on mobile)
+        nav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', closeNav);
+        });
+
+        // Close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeNav();
+        });
+    </script>
+</body>
+</html>
+
+
